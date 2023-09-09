@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "Heading":"Total Member",
+        "quotes": "Individually unique, collectively powerful.",
+        "button":"See Details"
+    },
+    {
+        "id":2,
+        "Heading":"Add a New Member",
+        "quotes": "Join us on the journey to greatness.",
+        "button":"Click to Add"
+    },
+    {
+        "id":3,
+        "Heading":"Stat",
+        "quotes": "Empowerment through association.",
+        "button":"Check"
+    }
+]

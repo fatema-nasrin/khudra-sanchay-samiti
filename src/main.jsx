@@ -6,12 +6,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Components/Home';
+import CustomerInfo from './Pages/CustomerInfo';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home/>,
   },
+  {
+    path:"/customerInfo",
+    element: <CustomerInfo/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
