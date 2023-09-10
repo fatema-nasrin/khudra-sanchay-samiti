@@ -5,6 +5,11 @@
   top: 50%;
   left: 80%;
 }
+.idea{
+  position: absolute;
+  top: 70%;
+  right: 80%;
+}
 
 @keyframes spin {
   0% {

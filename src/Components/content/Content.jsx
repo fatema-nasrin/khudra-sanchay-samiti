@@ -1,7 +1,7 @@
 import './content.css'
 const Content = () => {
   return (
-    <div className="grid grid-cols-3 gap-2 h-screen banner">
+    <div className="grid grid-cols-4 gap-2 h-screen banner">
       <div>
       <img className="h-12 w-12 coin" src="/public/coin.svg" alt="" />
       </div>
@@ -10,6 +10,9 @@ const Content = () => {
       </div>
      <div>
      <img className="h-12 w-12 opacity-50 profit" src="/public/reshot-illustration-data-analytics-8W6NTYSUVB.png" alt="" />
+     </div>
+     <div>
+     <img className="h-12 w-12 opacity-70 idea" src="/public/idea.svg" alt="" />
      </div>
     </div>
   );
