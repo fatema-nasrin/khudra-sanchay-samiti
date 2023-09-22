@@ -9,6 +9,8 @@ import Home from './Components/Home';
 import CustomerInfo from './Pages/CustomerInfo';
 import EntryForm from './Pages/EntryForm';
 import Content from './Components/content/Content';
+import BasicInfo from './Pages/BasicInfo';
+import History from './Pages/History';
 
 const router = createBrowserRouter([
   {
@@ -21,11 +23,20 @@ const router = createBrowserRouter([
       },
       {
         path:"/customerInfo",
-        element:<CustomerInfo/>
+        element:<CustomerInfo/>,
+        loader:()=>fetch("http://localhost:5000/all-member")
+      },
+      {
+        path:"/basicInfo",
+        element:<BasicInfo/>
       },
       {
         path:"/entryForm",
         element:<EntryForm/>
+      },
+      {
+        path:"/history",
+        element:<History/>
       }
     ]
   },

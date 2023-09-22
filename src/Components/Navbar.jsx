@@ -22,16 +22,12 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       <Link to="/"> <li><a>Home</a></li></Link>
-      <li>
-      
-          <a>Members Information</a>
-      
-      </li>
+      <Link to = "/basicInfo"><li><a>Members Information</a></li></Link>
       <Link to = "/customerInfo"><li><a>Trading</a></li></Link>
     </ul>
   </div>
   <div className="navbar-end">
-   <Link to = "/entryForm"> <a className="btn btn-ghost normal-case text-base text-emerald-800">Add a member</a></Link> <br />
+   <Link to = "/entryForm"> <a className="btn btn-ghost normal-case text-base text-emerald-800">Add New Member</a></Link> <br />
   </div>
 </div>
     );
