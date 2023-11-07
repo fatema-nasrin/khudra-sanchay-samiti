@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import "./EntryForm.css"
 
 const EntryForm = () => {
   const [randomId, setRandomId] = useState("");
@@ -25,11 +26,10 @@ const EntryForm = () => {
     return randomLetter + randomNumber;
   }
 
-  // Use useEffect to generate the random ID when the component mounts
   useEffect(() => {
     const newRandomId = generateRandomId();
     setRandomId(newRandomId);
-  }, []); // The empty dependency array ensures this runs once on mount
+  }, []);
 
   const handleAddMember = (event) => {
     event.preventDefault();
@@ -38,9 +38,9 @@ const EntryForm = () => {
     const id = form.id.value;
     const name = form.name.value;
     const date = form.date.value;
-    const deposit = form.deposit.value;
+    const total = form.total.value;
     const number = form.number.value;
-    const newMember = { id, name, date, deposit, number };
+    const newMember = { id, name, date, total, number };
     console.log(newMember);
 
     fetch("http://localhost:5000/all-member", {
@@ -63,13 +63,18 @@ const EntryForm = () => {
         }
       });
   };
+  const background = {
+    background: "linear-gradient(45deg, #609c8f, #d27282)",
+    animation: 'pulse 3s infinite',
+    backgroundSize: '200% 200%',
+  };
   return (
-    <div className="h-screen">
+    <div className="h-screen water-bg">
       <form
         onSubmit={handleAddMember}
         className="my-9 mx-20 p-9 rounded-lg shadow-md grid grid-cols-2 gap-10"
       >
-        <div className="">
+        <div>
           <label htmlFor="name" className="block text-gray-700 font-bold">
             Name:
           </label>
@@ -77,7 +82,7 @@ const EntryForm = () => {
             type="text"
             name="name"
             placeholder="Enter Name"
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
+            className="w-full px-3 py-2 text-amber-950 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
             required
           />
         </div>
@@ -88,7 +93,7 @@ const EntryForm = () => {
           <input
             type="date"
             name="date"
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
+            className="custom-date-input w-full px-3 py-2 text-amber-950 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
             required
           />
         </div>
@@ -98,9 +103,9 @@ const EntryForm = () => {
           </label>
           <input
             type="number"
-            name="deposit"
+            name="total"
             placeholder="Amount"
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
+            className="w-full px-3 py-2 text-amber-950 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
             required
           />
         </div>
@@ -112,7 +117,7 @@ const EntryForm = () => {
             type="number"
             name="number"
             placeholder="+880"
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
+            className="w-full px-3 py-2 text-amber-950 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-transparent"
             required
           />
         </div>
@@ -122,7 +127,7 @@ const EntryForm = () => {
             Account Number:
           </label>
           <input
-            className="bg-transparent p-2"
+            className="bg-transparent p-2 text-amber-950"
             type="text"
             name="id"
             value={randomId}
@@ -132,12 +137,14 @@ const EntryForm = () => {
 
         <div>
           <button
+            style={background}
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white py-2 w-1/2 font-bold rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            className=" text-amber-950 py-2 w-1/2 font-bold rounded-lg focus:outline-none focus:ring focus:border-blue-300"
           >
             Add
           </button>
         </div>
+      
       </form>
     </div>
   );

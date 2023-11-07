@@ -1,0 +1,9 @@
+.water-bg{
+  background-image: url('/public/human.png');
+  background-repeat: no-repeat;
+  background-position-x: right;
+
+}
+.custom-date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1); 
+}
